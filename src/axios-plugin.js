@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const AxiosPlugin = {
-  install(Vue) {
-    Vue.prototype.$http = axios.create({
+  install(app) {
+    app.config.globalProperties.$http = axios.create({
       baseURL: 'http://localhost:3000',
     });
   },
