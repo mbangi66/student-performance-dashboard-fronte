@@ -1,7 +1,8 @@
 <template>
     <div>
-      <h1>Average Scores</h1>
-      <p>{{ averageScores }}</p>
+        <h1>Average Scores</h1>
+        <p v-if="averageScores !== null">{{ averageScores }}</p>
+        <p v-else>Loading...</p>
     </div>
   </template>
   
@@ -18,7 +19,7 @@
     methods: {
       async fetchAverageScores() {
         try {
-          const response = await this.$axios.get('/api/average-scores');
+          const response = await this.$http.get('/api/average-scores');
           this.averageScores = response.data.averageScores;
         } catch (error) {
           console.error('Error fetching average scores:', error);
