@@ -5,6 +5,7 @@ import StudentsList from "../components/StudentsList.vue"
 import PerformanceByGender from "../components/PerformanceByGender.vue"
 import GetAllStudents from "../components/GetAllStudents.vue"
 import StudentsByGender from "../components/StudentsByGender.vue"
+import StudentPerformance from "../components/StudentPerformance.vue"
 
 const routes = [
   {
@@ -41,6 +42,12 @@ const routes = [
     component: StudentsByGender,
     props: true,
   },
+  {
+    path: '/performance/:studentId',
+    name: 'student-performance',
+    component: StudentPerformance,
+    props: true, 
+  }
 ]
 
 const router = createRouter({
