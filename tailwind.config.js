@@ -11,6 +11,9 @@ module.exports = withMT({
     "./node_modules/tw-elements/dist/js/**/*.js"
   ],
   theme: {
+    fontFamily: {
+      sans: ["Open Sans", "sans-serif"],
+    },
     extend: {},
   },
   darkMode: "class",
