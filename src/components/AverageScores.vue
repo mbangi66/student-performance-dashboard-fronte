@@ -16,42 +16,35 @@
     <div v-if="error">{{ error }}</div>
   </div>
 </template>
-  
+
 <script>
- import AxiosPlugin from '../axios-plugin.js';
- const self = this;
-  export default {
-    data() {
-      return {
-        averageScores: null,
-        loading: false,
-        error: null,
-      };
-    },
-    mounted() {
-      this.fetchAverageScores();
-    },
-    methods: {
-      async fetchAverageScores() {
-        try {
-          this.loading = true;
-          if (!this.$http) {
-            console.error('$http is not defined');
-            return;
-          }
-          const response = await this.$http.get('/api/average-scores');
-          this.averageScores = response.data.averageScores;
-        } catch (error) {
-          console.error('Error fetching average scores:', error);
-          this.error = {
-            message: 'Error fetching average scores. Please try again later.',
-          };
-        } finally {
-          this.loading = false;
-        }
-      },
-    },
-  };
+import { ref, onMounted } from 'vue';
+import { getAverageScores } from '../axios-plugin';
+
+export default {
+  setup() {
+    const averageScores = ref(null);
+    const loading = ref(false);
+    const error = ref(null);
+
+    const fetchAverageScores = async () => {
+      try {
+        loading.value = true;
+        const response = await getAverageScores();
+        averageScores.value = response.data.averageScores;
+      } catch (error) {
+        console.error('Error fetching average scores:', error);
+        error.value = {
+          message: 'Error fetching average scores. Please try again later.',
+        };
+      } finally {
+        loading.value = false;
+      }
+    };
+
+    onMounted(fetchAverageScores);
+
+    return { averageScores, loading, error };
+  },
+};
 </script>
-  
-  
