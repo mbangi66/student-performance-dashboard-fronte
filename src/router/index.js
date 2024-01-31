@@ -48,6 +48,12 @@ const routes = [
     component: () => import('../components/SchoolPerformance.vue'),
     props: true,
   },
+  {
+    path: '/score-distributions',
+    name: 'ScoreDistributions',
+    component: () => import('../components/ScoreDistributions.vue'),
+  },
+  
 ]
 
 const router = createRouter({
