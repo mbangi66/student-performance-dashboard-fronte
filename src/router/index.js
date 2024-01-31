@@ -1,11 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import AverageScores from '@/components/AverageScores.vue'
 import Home from "@/components/Home.vue"
-import StudentsList from "../components/StudentsList.vue"
-import PerformanceByGender from "../components/PerformanceByGender.vue"
-import GetAllStudents from "../components/GetAllStudents.vue"
-import StudentsByGender from "../components/StudentsByGender.vue"
-import StudentPerformance from "../components/StudentPerformance.vue"
 
 const routes = [
   {
@@ -15,18 +9,18 @@ const routes = [
   },
   {
     path: '/AverageScores',
-    component: AverageScores,
+    component: () => import('../components/AverageScores.vue'),
   },
   {
     path: '/StudentsList/:schoolId',
     name: 'StudentsList',
-    component: StudentsList,
+    component: () => import("../components/StudentsList.vue"),
     props: true,
   },
   {
     path: '/performance-by-gender',
     name: 'PerformanceByGender',
-    component: PerformanceByGender,
+    component: () => import("../components/PerformanceByGender.vue"),
     meta: {
       title: 'Performance By Gender', 
     },
@@ -34,20 +28,26 @@ const routes = [
   {
     path: '/students',
     name: 'GetAllStudents',
-    component: GetAllStudents,
+    component: () => import("../components/GetAllStudents.vue"),
   },
   {
     path: '/students/by-gender/:gender',
     name: 'StudentsByGender',
-    component: StudentsByGender,
+    component: () => import("../components/StudentsByGender.vue"),
     props: true,
   },
   {
     path: '/performance/:studentId',
     name: 'student-performance',
-    component: StudentPerformance,
+    component: () => import('../components/StudentPerformance.vue'),
     props: true, 
-  }
+  },
+  {
+    path: '/school-performance/:schoolId',
+    name: 'SchoolPerformance',
+    component: () => import('../components/SchoolPerformance.vue'),
+    props: true,
+  },
 ]
 
 const router = createRouter({
