@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@material-tailwind/html": "^2.2.2",
+    "apexcharts": "^3.45.2",
     "axios": "^1.6.7",
     "core-js": "^3.8.3",
     "tw-elements": "^1.1.0",
