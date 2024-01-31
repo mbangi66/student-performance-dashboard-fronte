@@ -3,6 +3,7 @@ import AverageScores from '@/components/AverageScores.vue'
 import Home from "@/components/Home.vue"
 import StudentsList from "../components/StudentsList.vue"
 import PerformanceByGender from "../components/PerformanceByGender.vue"
+import GetAllStudents from "../components/GetAllStudents.vue"
 
 const routes = [
   {
@@ -27,7 +28,12 @@ const routes = [
     meta: {
       title: 'Performance By Gender', 
     },
-  }
+  },
+  {
+    path: '/students',
+    name: 'GetAllStudents',
+    component: GetAllStudents,
+  },
 ]
 
 const router = createRouter({
