@@ -4,6 +4,7 @@ import Home from "@/components/Home.vue"
 import StudentsList from "../components/StudentsList.vue"
 import PerformanceByGender from "../components/PerformanceByGender.vue"
 import GetAllStudents from "../components/GetAllStudents.vue"
+import StudentsByGender from "../components/StudentsByGender.vue"
 
 const routes = [
   {
@@ -33,6 +34,12 @@ const routes = [
     path: '/students',
     name: 'GetAllStudents',
     component: GetAllStudents,
+  },
+  {
+    path: '/students/by-gender/:gender',
+    name: 'StudentsByGender',
+    component: StudentsByGender,
+    props: true,
   },
 ]
 
