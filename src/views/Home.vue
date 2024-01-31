@@ -17,6 +17,9 @@
     <div class="flex justify-evenly m-4">
       <PerformanceByParentalEducation />
     </div>
+    <div class="m-4">
+      <SchoolPerformance />
+    </div>
 
   </div>
 
@@ -32,14 +35,16 @@ import Dashboard from '../components/Dashboard.vue';
 import PerformanceByParentalEducation from '../components/PerformanceByParentalEducation.vue';
 import AverageScore from "../components/AverageScores.vue";
 import PerformanceByGender from "../components/PerformanceByGender.vue"
+import SchoolPerformance from '../components/SchoolPerformance.vue';
 
 export default {
   components: {
     Dashboard,
     PerformanceByParentalEducation,
     AverageScore,
-    PerformanceByGender
-  },
+    PerformanceByGender,
+    SchoolPerformance
+},
   data() {
     return {
       error: null,
