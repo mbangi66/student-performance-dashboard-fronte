@@ -42,7 +42,7 @@ export default {
           })),
           chart: {
             type: "line",
-            height: 240,
+            height: 400,
             width: "140%",
             toolbar: {
               show: false,
