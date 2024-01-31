@@ -1,5 +1,5 @@
 <template>
-    <div class="relative flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+  <div class="relative flex flex-col items-center rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
     <div class="relative mx-4 mt-4 flex flex-col gap-4 overflow-hidden rounded-none bg-transparent bg-clip-border text-gray-700 shadow-none md:flex-row md:items-center">
       <div>
         <h6 class="block font-sans text-base font-semibold leading-relaxed tracking-normal text-blue-gray-900 antialiased">
@@ -7,8 +7,8 @@
         </h6>
       </div>
     </div>
-    <div class="pt-6 px-2 pb-0">
-      <div id="line-chart"></div>
+    <div class="pt-6 px-2 pb-0 w-full">
+      <div id="line-chart" style="width: 100%;"></div>
     </div>
   </div>
 </template>
@@ -34,11 +34,16 @@ export default {
         const chartConfig = {
           series: impactByParentalEducation.value.map(item => ({
             name: item.Medu + ' / ' + item.Fedu,
-            data: [item.avgG1, item.avgG2, item.avgG3],
+            data: [
+            parseFloat(item.avgG1.toFixed(2)),
+            parseFloat(item.avgG2.toFixed(2)),
+            parseFloat(item.avgG3.toFixed(2)),
+            ],
           })),
           chart: {
             type: "line",
             height: 240,
+            width: "140%",
             toolbar: {
               show: false,
             },
@@ -76,7 +81,7 @@ export default {
               },
               padding: {
                 top: 5,
-                right: 20,
+                right: 40,
               },
             },
             fill: {
