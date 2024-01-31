@@ -7,16 +7,22 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@material-tailwind/html": "^2.2.2",
     "axios": "^1.6.7",
     "core-js": "^3.8.3",
+    "tw-elements": "^1.1.0",
     "vue": "^3.2.13",
     "vue-axios": "^3.5.2",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/body-parser": "^1.19.5",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
+    "@vue/cli-service": "^5.0.8",
     "autoprefixer": "^10.4.17",
     "postcss": "^8.4.33",
     "sass": "^1.32.7",

@@ -5,6 +5,13 @@
 </template>
 
 <script>
+import { onMounted } from "vue";
+
+onMounted(async () => {
+  const { Tooltip, initTE } = await import("tw-elements");
+  initTE({ Tooltip });
+});
+
 export default {
   name: 'App',
 };
