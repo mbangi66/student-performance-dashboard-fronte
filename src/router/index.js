@@ -53,6 +53,11 @@ const routes = [
     name: 'ScoreDistributions',
     component: () => import('../components/ScoreDistributions.vue'),
   },
+  {
+    path: '/performance-by-parental-education',
+    name: 'PerformanceByParentalEducation',
+    component: () => import('../components/PerformanceByParentalEducation.vue'),
+  },
   
 ]
 
